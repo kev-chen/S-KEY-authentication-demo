@@ -122,6 +122,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-*/skeykeys
-*/keyindex
-*/keys
+skeykeys
+keyindex
+keys
