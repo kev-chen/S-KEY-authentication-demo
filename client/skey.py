@@ -3,16 +3,13 @@
 from hashlib import sha256
 
 class SKey:
-    def __init__(self, secretKey):
-        self.secretKey = secretKey
-
-    def P(i):
+    def P(self, i, secretKey):
         if i == 0: # P_0 is just the secret
-            return self.secretKey
+            return secretKey
         else:
-            return self.getHash(P(i-1))
+            return self.getHash(self.P(i-1, secretKey))
 
-    def getHash(bstr):
+    def getHash(self, bstr):
         # Get the byte string if it's not already bytes
         try:
             bstr = bstr.encode() 
